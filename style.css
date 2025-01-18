@@ -1,0 +1,129 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #d1d1f1;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    width: 90%;
+    max-width: 500px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-box:focus {
+    border-color: #8f94fb;
+}
+
+.generate-button {
+    background: #ff6f61;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.generate-button:hover {
+    background: #ff3b2f;
+}
+
+/* Output Section */
+.output-section {
+    width: 90%;
+    max-width: 600px;
+    background: #ffffff;
+    color: #4e54c8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.output-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #4e54c8;
+}
+
+.video-preview video,
+.video-preview audio {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #d1d1f1;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .generate-button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+audio {
+    display: none;
+}
+
