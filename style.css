@@ -1,15 +1,10 @@
-/* Global Styles */
-* {
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Body */
-body {
-    background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
-    color: #ffffff;
+    color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,113 +12,211 @@ body {
     min-height: 100vh;
 }
 
-/* Header */
 header {
     text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
-header h1 {
+h1.animated-title {
     font-size: 3rem;
     font-weight: bold;
-    color: #ffffff;
+    color: #fff;
+    animation: neonGlow 1.5s infinite alternate;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff758c, 0 0 30px #ff758c, 0 0 40px #ff7eb3;
+    font-family: 'Quicksand', sans-serif;
+    
 }
 
-header p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: #d1d1f1;
+p.animated-subtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    animation: fadeInUp 1s ease-in-out;
+    margin-bottom: 1rem;
 }
 
 /* Input Section */
 .input-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+    width: 90%;
+    max-width: 600px;
+    animation: scaleUp 0.5s ease-in-out;
+}
+
+.input-section .instruction-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-weight: 500;
 }
 
 .input-box {
-    width: 90%;
-    max-width: 500px;
-    padding: 10px 15px;
-    font-size: 1rem;
-    border: 2px solid #ffffff;
+    width: 80%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 2px solid #ddd;
     border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .input-box:focus {
-    border-color: #8f94fb;
+    border-color: #ff758c;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 117, 140, 0.5);
 }
 
-.generate-button {
-    background: #ff6f61;
-    color: #ffffff;
-    padding: 10px 20px;
+.generate-button, .clear-button {
+    padding: 0.9rem 1.8rem;
+    margin: 0.5rem;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.generate-button:hover {
-    background: #ff3b2f;
+.generate-button:hover, .clear-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 117, 140, 0.5);
+}
+
+.clear-button {
+    background: #ddd;
+    color: #555;
+}
+
+.clear-button:hover {
+    background: #bbb;
 }
 
 /* Output Section */
 .output-section {
     width: 90%;
-    max-width: 600px;
-    background: #ffffff;
-    color: #4e54c8;
-    padding: 20px;
-    border-radius: 10px;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s ease-in-out;
+}
+
+#status {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
     text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    color: #555;
 }
 
-.output-section p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: #4e54c8;
+.content-preview h3 {
+    color: #ff758c;
+    margin-bottom: 1rem;
 }
 
-.video-preview video,
-.video-preview audio {
+.content-preview video {
     width: 100%;
-    margin-top: 10px;
+    max-height: 200px;
+    margin-bottom: 1.5rem;
+    border: 3px solid transparent;
     border-radius: 10px;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.content-preview video:hover {
+    transform: scale(1.05);
+    border-color: #ff758c;
+}
+
+.audio-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.audio-item:hover {
+    background: #fff;
+    border-color: #ff758c;
+    box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+}
+
+.audio-item p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
 }
 
 /* Footer */
 footer {
-    margin-top: 30px;
     text-align: center;
+    margin-top: 2rem;
     font-size: 0.9rem;
-    color: #d1d1f1;
+    color: #fff;
+    opacity: 0.8;
 }
 
-footer p {
-    margin: 0;
+/* Animations */
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 10px #ff758c, 0 0 20px #ff7eb3, 0 0 30px #ff758c;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff758c, 0 0 30px #ff7eb3, 0 0 40px #ff758c;
+    }
 }
 
-/* Responsive Design */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
+    h1.animated-title {
+        font-size: 2.5rem;
     }
 
-    .generate-button {
-        font-size: 0.9rem;
-        padding: 8px 15px;
+    p.animated-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .input-section, .output-section {
+        width: 95%;
+    }
+
+    .generate-button, .clear-button {
+        width: 100%;
     }
 }
+
+
+/* Hide Audio */
 audio {
     display: none;
 }
-
